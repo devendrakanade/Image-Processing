@@ -1,0 +1,43 @@
+import numpy as np
+import cv2
+img1= cv2.imread("i1.png")
+img2= cv2.imread("i2.jpg")
+img3= cv2.imread("i3.png")
+img4= cv2.imread("i4.png")
+cv2.imshow("Image1", img1)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+cv2.imshow("Image2", img2)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+cv2.imshow("Image3", img3)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+cv2.imshow("Image4", img4)
+cv2.waitKey()
+cv2.destroyAllWindows()
+print("ORIGINAL SHAPE OF IMAGES" )
+print(img1.shape)
+print(img2.shape)
+print(img3.shape)
+print(img4.shape)
+ORIGINAL SHAPE OF IMAGES
+(168, 300, 3)
+(112, 450, 3)
+(188, 268, 3)
+(123, 286, 3)
+width, height = 168 , 275
+img3=cv2.resize(img3, (width,height))
+print("SHAPE OF IMAGES AFTER RESIZING")
+print(img1.shape)
+print(img2.shape)
+print(img3.shape)
+print(img4.shape)
+SHAPE OF IMAGES AFTER RESIZING
+(275, 168, 3)
+(275, 168, 3)
+(275, 168, 3)
+(275, 168, 3)
