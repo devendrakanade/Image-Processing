@@ -1,0 +1,30 @@
+import numpy as np
+import cv2
+
+img1= cv2.imread("i1.png")
+img2= cv2.imread("i2.jpg")
+
+print(img1.shape)
+print(img2.shape)
+
+width, height = 168 , 275
+img2=cv2.resize(img2, (width,height))
+img = np.hstack((img1,img2))
+cv2.imshow("Before", img)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+cp1=img1[5:100, 25:120]
+img2[5:100, 25:120]=cp1
+fp2=img2
+
+img2= cv2.imread("i2.jpg")
+
+cp2= img2[5:100, 25:120]
+img1[5:100, 25:120]=cp2
+fp1=img1
+
+photo=np.hstack((fp1,fp2))
+cv2.imshow("After", photo)
+cv2.waitKey()
+cv2.destroyAllWindows()
