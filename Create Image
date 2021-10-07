@@ -1,0 +1,30 @@
+import cv2
+import numpy
+
+#black image with 500*500 as dimensions
+photo=numpy.zeros((500,500,3))
+
+cv2.imshow("photo",photo)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
+#inserting the shape of rectangle into the image rectangle(imagename,(x1,y1),(x2,y2),[B,G,R],thickness)
+#photo=cv2.rectangle(photo,(200,200),(300,300),[200,256,235],10)
+#photo=cv2.rectangle(photo,(200,200),(300,300),[255, 0, 0],10)
+
+# inserting the shape of line into the image with function line(imagename,(x1-cordinate,y1-cordinate),[B,G,R],thickness)
+lphoto = cv2.line(photo,(200,210),(160,240),[120,255,135],5)
+lphoto = cv2.line(photo,(300,210),(340,240),[120,0,135],5)
+lphoto = cv2.line(photo,(220,300),(220,340),[120,0,135],5)
+lphoto = cv2.line(photo,(280,300),(280,340),[120,0,135],5)
+
+# inserting the shape of circle into the image with function
+#circle(imagename,(centre-x1-cordinate,y1-cordinate),radius,[B,G,R],thickness)
+circle=cv2.circle(lphoto,(250,150),45,[0,250,211],4)
+circle=cv2.circle(lphoto,(230,135),5,[0,250,211],4)
+circle=cv2.circle(lphoto,(270,135),5,[0,250,211],4)
+photo=cv2.line(photo,(240,165),(260,165),[0,0,135],5)
+
+cv2.imshow("photo",photo)
+cv2.waitKey()
+cv2.destroyAllWindows()
